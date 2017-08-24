@@ -1,0 +1,25 @@
+﻿@model RPGManagerSystem.ViewModels.PlayerIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (@Model.Jogadores.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Jogadores</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var jogador in Model.Jogadores)
+            {
+                <tr><td>Jogador: @Html.ActionLink(jogador.Nome, "DetalhesJogador", new { jogador.Id })</td></tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>We don't have any customers yet.</p>
+}

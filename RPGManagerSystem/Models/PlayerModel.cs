@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGManagerSystem.Models
 {
-    public class JogadoresModel
+    public class PlayerModel
     {
         public int Id { get; set; }
 
