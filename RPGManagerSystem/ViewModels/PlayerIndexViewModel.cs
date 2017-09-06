@@ -10,7 +10,7 @@ namespace RPGManagerSystem.ViewModels
     public class PlayerIndexViewModel
     {
 
-        public List<PlayerModel> Jogadores { get; set; }
+        public List<Player> Jogadores { get; set; }
 
     }
 }

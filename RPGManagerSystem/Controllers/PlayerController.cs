@@ -10,26 +10,19 @@ namespace RPGManagerSystem.Controllers
 {
     public class PlayerController : Controller
     {
-        static List<PlayerModel> listaJogadores = new List<PlayerModel>()
+        private ApplicationDbContext _dbContext = new ApplicationDbContext();
+
+        protected override void Dispose(bool disposing)
         {
-            new PlayerModel()
-            {
-                Id = 1, Nome = "Richard Wilhian Schug"
-            },
-            new PlayerModel()
-            {
-                Id = 2,
-                Nome = "Teste 2"
-            }
+            _dbContext.Dispose();
         }
-        ;
 
         // GET: Jogadores
         public ActionResult Index()
         {
             var playerIndexView = new PlayerIndexViewModel()
             {
-                Jogadores=listaJogadores
+                Jogadores = _dbContext.Player.ToList()
             };
             
             return View(playerIndexView);
@@ -37,9 +30,9 @@ namespace RPGManagerSystem.Controllers
 
         public ActionResult DetalhesJogador(int id)
         {
-            if (id > listaJogadores.Count) return HttpNotFound();
+            if (id > _dbContext.Player.Count()) return HttpNotFound();
 
-            PlayerModel jogadorDetalhe = listaJogadores.Find(jogador => jogador.Id==id);
+            Player jogadorDetalhe = _dbContext.Player.Find(id);
 
             return View(jogadorDetalhe);
         }
