@@ -9,10 +9,14 @@ namespace RPGManagerSystem.Models
 {
     public class Player
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Required]
         public string Nome { get; set; }
+        
+        public virtual List<Sheet> Fichas { get; set; }
+
+        public string Apelido { get; set; }
 
     }
 }

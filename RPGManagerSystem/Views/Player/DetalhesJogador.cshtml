@@ -6,4 +6,19 @@
 
 <h2>ID: @Model.Id</h2><br />
 <h3>Nome: @Model.Nome</h3>
+@if (@Model.Fichas.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Ficha</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var ficha in Model.Fichas)
+            {
+                <tr><td>@ficha.Id</td></tr>
+            }
+        </tbody>
+    </table>
+}
 

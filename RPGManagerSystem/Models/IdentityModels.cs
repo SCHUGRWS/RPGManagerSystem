@@ -21,6 +21,7 @@ namespace RPGManagerSystem.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Player> Player { get; set; }
+        public DbSet<Sheet> Sheet { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -31,5 +32,14 @@ namespace RPGManagerSystem.Models
         {
             return new ApplicationDbContext();
         }
+
+        //protected override void OnModelCreating(DbModelBuilder mb)
+        //{
+        //    mb.Entity<Player>()
+        //        .HasMany(u => u.Fichas).WithRequired().HasForeignKey(u => u.IdPlayer);
+            
+        //    // If you want to specify a table, use the following line:
+        //    // .Map(m => m.ToTable("CustomManyToManyTableName");
+        //}
     }
 }

@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -191,9 +193,30 @@
     <Compile Include="Migrations\201709060051445_testesDB1.Designer.cs">
       <DependentUpon>201709060051445_testesDB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709122352265_Fichas.cs" />
+    <Compile Include="Migrations\201709122352265_Fichas.Designer.cs">
+      <DependentUpon>201709122352265_Fichas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709130002230_Fichas1.cs" />
+    <Compile Include="Migrations\201709130002230_Fichas1.Designer.cs">
+      <DependentUpon>201709130002230_Fichas1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709130018472_FichasPlayer.cs" />
+    <Compile Include="Migrations\201709130018472_FichasPlayer.Designer.cs">
+      <DependentUpon>201709130018472_FichasPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709130031140_addPlayerToSheet.cs" />
+    <Compile Include="Migrations\201709130031140_addPlayerToSheet.Designer.cs">
+      <DependentUpon>201709130031140_addPlayerToSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709130044049_Teste.cs" />
+    <Compile Include="Migrations\201709130044049_Teste.Designer.cs">
+      <DependentUpon>201709130044049_Teste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Sheet.cs" />
     <Compile Include="ViewModels\PlayerIndexViewModel.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -282,6 +305,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709060051445_testesDB1.resx">
       <DependentUpon>201709060051445_testesDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709122352265_Fichas.resx">
+      <DependentUpon>201709122352265_Fichas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130002230_Fichas1.resx">
+      <DependentUpon>201709130002230_Fichas1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130018472_FichasPlayer.resx">
+      <DependentUpon>201709130018472_FichasPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130031140_addPlayerToSheet.resx">
+      <DependentUpon>201709130031140_addPlayerToSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130044049_Teste.resx">
+      <DependentUpon>201709130044049_Teste.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

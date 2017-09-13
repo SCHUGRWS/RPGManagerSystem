@@ -2,6 +2,7 @@
 using RPGManagerSystem.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,10 +32,11 @@ namespace RPGManagerSystem.Controllers
         public ActionResult DetalhesJogador(int id)
         {
             if (id > _dbContext.Player.Count()) return HttpNotFound();
+            
+            Player teste = _dbContext.Player.Include(p => p.Fichas).Where(x => x.Id == id).FirstOrDefault();
 
-            Player jogadorDetalhe = _dbContext.Player.Find(id);
 
-            return View(jogadorDetalhe);
+            return View(teste);
         }
     }
 }
