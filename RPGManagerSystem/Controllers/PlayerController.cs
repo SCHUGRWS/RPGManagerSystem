@@ -38,5 +38,44 @@ namespace RPGManagerSystem.Controllers
 
             return View(teste);
         }
+
+
+        public ActionResult Novo()
+        {
+            var viewModel = new PlayerFormViewModel();
+
+            return View("FormJogador", viewModel);
+        }
+
+        [HttpPost] // só será acessada com POST
+        public ActionResult Salvar(Player jogador)
+        {
+            if (jogador.Id != 0)
+            {
+                _dbContext.Entry(jogador).State = EntityState.Modified;
+            }
+            else
+            {
+                _dbContext.Player.Add(jogador);
+            }
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Editar(int id)
+        {
+            var jogador = _dbContext.Player.SingleOrDefault(c => c.Id == id);
+
+            if (jogador == null)
+                return HttpNotFound();
+
+            var viewModel = new PlayerFormViewModel
+            {
+                Jogador = jogador,
+                Fichas = _dbContext.Sheet.ToList()
+            };
+
+            return View("FormJogador", viewModel);
+        }
     }
 }

@@ -4,6 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p>
+    @Html.ActionLink("Novo Jogador", "Novo", null, new { @class = "btn btn-primary" })
+</p>
+
 @if (@Model.Jogadores.Count > 0)
 {
     <table class="table table-bordered table-hover">
@@ -14,7 +18,7 @@
 
             @foreach (var jogador in Model.Jogadores)
             {
-                <tr><td>Jogador: @Html.ActionLink(jogador.Nome, "DetalhesJogador", new { jogador.Id })</td></tr>
+                <tr><td>Jogador: @Html.ActionLink(jogador.Nome, "DetalhesJogador", new { jogador.Id })</td><td>@Html.ActionLink("Editar", "Editar", new { jogador.Id })</td></tr>
             }
         </tbody>
     </table>

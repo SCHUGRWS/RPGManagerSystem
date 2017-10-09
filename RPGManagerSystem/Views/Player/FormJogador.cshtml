@@ -1,0 +1,26 @@
+﻿@model RPGManagerSystem.ViewModels.PlayerFormViewModel
+@{
+    ViewBag.Title = "FormJogador";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Salvar", "Player"))
+{
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(m => m.Jogador.Id)
+        @Html.TextBoxFor(m => m.Jogador.Id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Jogador.Nome)
+        @Html.TextBoxFor(m => m.Jogador.Nome, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Jogador.Apelido)
+        @Html.TextBoxFor(m => m.Jogador.Apelido, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+
+
