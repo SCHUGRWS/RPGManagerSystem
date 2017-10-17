@@ -50,6 +50,18 @@ namespace RPGManagerSystem.Controllers
         [HttpPost] // só será acessada com POST
         public ActionResult Salvar(Player jogador)
         {
+            ModelState.Remove("jogador.Id");
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new PlayerFormViewModel
+                {
+                    Jogador = jogador,
+                    Fichas = _dbContext.Sheet.ToList()
+                };
+
+                return View("FormJogador", viewModel);
+            }
+
             if (jogador.Id != 0)
             {
                 _dbContext.Entry(jogador).State = EntityState.Modified;

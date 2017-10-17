@@ -10,6 +10,7 @@ namespace RPGManagerSystem.Models
     {
         public long Id { get; set; }
 
+        [Required]
         public long PlayerId { get; set; }
         public Player Player { get; set; }
 

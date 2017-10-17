@@ -12,11 +12,17 @@ namespace RPGManagerSystem.Models
         public long Id { get; set; }
 
         [Required]
+        [StringLength(255)]
         public string Nome { get; set; }
         
         public virtual List<Sheet> Fichas { get; set; }
 
+        [StringLength(255)]
         public string Apelido { get; set; }
+
+        [Required]
+        [Display(Name = "Data de Nascimento")]
+        public DateTime? DataNascimento { get; set; }
 
     }
 }

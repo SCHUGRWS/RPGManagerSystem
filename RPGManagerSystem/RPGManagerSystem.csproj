@@ -213,6 +213,22 @@
     <Compile Include="Migrations\201709130044049_Teste.Designer.cs">
       <DependentUpon>201709130044049_Teste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710172201448_Validacao1.cs" />
+    <Compile Include="Migrations\201710172201448_Validacao1.Designer.cs">
+      <DependentUpon>201710172201448_Validacao1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172231495_DataNasc.cs" />
+    <Compile Include="Migrations\201710172231495_DataNasc.Designer.cs">
+      <DependentUpon>201710172231495_DataNasc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172234271_removerData.cs" />
+    <Compile Include="Migrations\201710172234271_removerData.Designer.cs">
+      <DependentUpon>201710172234271_removerData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710172235056_DatObrigatoria.cs" />
+    <Compile Include="Migrations\201710172235056_DatObrigatoria.Designer.cs">
+      <DependentUpon>201710172235056_DatObrigatoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -322,6 +338,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709130044049_Teste.resx">
       <DependentUpon>201709130044049_Teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172201448_Validacao1.resx">
+      <DependentUpon>201710172201448_Validacao1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172231495_DataNasc.resx">
+      <DependentUpon>201710172231495_DataNasc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172234271_removerData.resx">
+      <DependentUpon>201710172234271_removerData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710172235056_DatObrigatoria.resx">
+      <DependentUpon>201710172235056_DatObrigatoria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

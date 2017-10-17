@@ -25,7 +25,7 @@ namespace RPGManagerSystem
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/estiloGeral.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

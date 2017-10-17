@@ -8,17 +8,21 @@
 
 @using (Html.BeginForm("Salvar", "Player"))
 {
-    <div class="form-group" style="display:none">
-        @Html.LabelFor(m => m.Jogador.Id)
-        @Html.TextBoxFor(m => m.Jogador.Id, new { @class = "form-control" })
-    </div>
+    @Html.HiddenFor(m => m.Jogador.Id)
     <div class="form-group">
         @Html.LabelFor(m => m.Jogador.Nome)
         @Html.TextBoxFor(m => m.Jogador.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Jogador.Nome)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Jogador.Apelido)
         @Html.TextBoxFor(m => m.Jogador.Apelido, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Jogador.Apelido)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Jogador.DataNascimento)
+        @Html.TextBoxFor(m => m.Jogador.DataNascimento, "{0: dd/MM/yyyy }", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Jogador.DataNascimento)
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
 }
