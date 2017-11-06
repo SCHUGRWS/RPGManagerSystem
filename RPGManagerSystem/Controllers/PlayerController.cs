@@ -48,6 +48,7 @@ namespace RPGManagerSystem.Controllers
         }
 
         [HttpPost] // só será acessada com POST
+        [ValidateAntiForgeryToken]
         public ActionResult Salvar(Player jogador)
         {
             ModelState.Remove("jogador.Id");
