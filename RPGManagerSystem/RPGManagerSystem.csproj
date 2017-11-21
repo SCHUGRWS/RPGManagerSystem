@@ -229,10 +229,28 @@
     <Compile Include="Migrations\201710172235056_DatObrigatoria.Designer.cs">
       <DependentUpon>201710172235056_DatObrigatoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711212221482_UsuarioADM.cs" />
+    <Compile Include="Migrations\201711212221482_UsuarioADM.Designer.cs">
+      <DependentUpon>201711212221482_UsuarioADM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711212257238_adicionandoTabelas.cs" />
+    <Compile Include="Migrations\201711212257238_adicionandoTabelas.Designer.cs">
+      <DependentUpon>201711212257238_adicionandoTabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711212258390_Master.cs" />
+    <Compile Include="Migrations\201711212258390_Master.Designer.cs">
+      <DependentUpon>201711212258390_Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711212303006_AdicionandoTabela2.cs" />
+    <Compile Include="Migrations\201711212303006_AdicionandoTabela2.Designer.cs">
+      <DependentUpon>201711212303006_AdicionandoTabela2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Sheet.cs" />
+    <Compile Include="Models\Storyteller.cs" />
     <Compile Include="ViewModels\PlayerFormViewModel.cs" />
     <Compile Include="ViewModels\PlayerIndexViewModel.cs" />
     <Compile Include="Models\Player.cs" />
@@ -350,6 +368,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710172235056_DatObrigatoria.resx">
       <DependentUpon>201710172235056_DatObrigatoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212221482_UsuarioADM.resx">
+      <DependentUpon>201711212221482_UsuarioADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212257238_adicionandoTabelas.resx">
+      <DependentUpon>201711212257238_adicionandoTabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212258390_Master.resx">
+      <DependentUpon>201711212258390_Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711212303006_AdicionandoTabela2.resx">
+      <DependentUpon>201711212303006_AdicionandoTabela2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

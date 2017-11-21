@@ -18,7 +18,7 @@
 
             @foreach (var jogador in Model.Jogadores)
             {
-                <tr><td>Jogador: @Html.ActionLink(jogador.Nome, "DetalhesJogador", new { jogador.Id })</td><td>@Html.ActionLink("Editar", "Editar", new { jogador.Id })</td></tr>
+                <tr><td>Jogador: @Html.ActionLink(jogador.Nome, "DetalhesJogador", new { jogador.Id })</td><td>@Html.ActionLink("Editar", "Editar", new { jogador.Id })</td><td>@Html.ActionLink("Deletar", "Deletar", new { jogador.Id })</td></tr>
             }
         </tbody>
     </table>

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace RPGManagerSystem.Controllers
 {
+    [Authorize]
     public class PlayerController : Controller
     {
         private ApplicationDbContext _dbContext = new ApplicationDbContext();
@@ -73,6 +74,24 @@ namespace RPGManagerSystem.Controllers
             }
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Deletar(int id)
+        {
+            Player jogador = _dbContext.Player.SingleOrDefault(c => c.Id == id);
+
+            if (jogador == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                _dbContext.Player.Remove(jogador);
+                _dbContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            
         }
 
         public ActionResult Editar(int id)

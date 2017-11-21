@@ -22,6 +22,8 @@ namespace RPGManagerSystem.Models
     {
         public DbSet<Player> Player { get; set; }
         public DbSet<Sheet> Sheet { get; set; }
+        public DbSet<Game> Game { get; set; }
+        public DbSet<Storyteller> Storyteller { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

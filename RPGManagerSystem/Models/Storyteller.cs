@@ -6,23 +6,21 @@ using System.Web;
 
 namespace RPGManagerSystem.Models
 {
-    public class Sheet
+    public class Storyteller
     {
         public long Id { get; set; }
-
-        [Required]
-        public long PlayerId { get; set; }
-        public Player Player { get; set; }
 
         [Required]
         [StringLength(255)]
         public string Nome { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string Classe { get; set; }
+        public virtual List<Game> Jogos { get; set; }
 
-        public string GameId { get; set; }
-        public Game Game { get; set; }
+        [StringLength(255)]
+        public string Apelido { get; set; }
+
+        [Required]
+        [Display(Name = "Data de Nascimento")]
+        public DateTime? DataNascimento { get; set; }
     }
 }
