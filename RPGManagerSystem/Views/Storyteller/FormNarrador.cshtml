@@ -1,0 +1,36 @@
+﻿@model RPGManagerSystem.ViewModels.StorytellerFormViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Salvar", "Storyteller"))
+{
+    @Html.AntiForgeryToken();
+    @Html.HiddenFor(m => m.Narrador.Id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Narrador.Nome)
+        @Html.TextBoxFor(m => m.Narrador.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Narrador.Nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Narrador.Apelido)
+        @Html.TextBoxFor(m => m.Narrador.Apelido, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Narrador.Apelido)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Narrador.DataNascimento)
+        @Html.TextBoxFor(m => m.Narrador.DataNascimento, "{0: dd/MM/yyyy }", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Narrador.DataNascimento)
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
+
+
+
+

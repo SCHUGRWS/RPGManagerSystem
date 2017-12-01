@@ -32,18 +32,21 @@ namespace RPGManagerSystem.Controllers
 
         public ActionResult DetalhesJogador(int id)
         {
-            if (id > _dbContext.Player.Count()) return HttpNotFound();
-            
-            Player teste = _dbContext.Player.Include(p => p.Fichas).Where(x => x.Id == id).FirstOrDefault();
+            Player jogador = _dbContext.Player.Include(p => p.Fichas).Where(x => x.Id == id).FirstOrDefault();
+            if (jogador == null) return HttpNotFound();
 
 
-            return View(teste);
+            return View(jogador);
         }
 
 
         public ActionResult Novo()
         {
-            var viewModel = new PlayerFormViewModel();
+            var viewModel = new PlayerFormViewModel()
+            {
+                Jogador = new Player(),
+                Fichas = _dbContext.Sheet.ToList()
+            };
 
             return View("FormJogador", viewModel);
         }

@@ -1,8 +1,10 @@
 ﻿@model RPGManagerSystem.ViewModels.PlayerIndexViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Jogadores";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Novo Jogador", "Novo", null, new { @class = "btn btn-primary" })
@@ -12,18 +14,22 @@
 {
     <table class="table table-bordered table-hover">
         <thead>
-            <tr><th>Jogadores</th></tr>
+            <tr><th>Lista</th></tr>
         </thead>
         <tbody>
 
             @foreach (var jogador in Model.Jogadores)
             {
-                <tr><td>Jogador: @Html.ActionLink(jogador.Nome, "DetalhesJogador", new { jogador.Id })</td><td>@Html.ActionLink("Editar", "Editar", new { jogador.Id })</td><td>@Html.ActionLink("Deletar", "Deletar", new { jogador.Id })</td></tr>
+                <tr>
+                    <td>@Html.ActionLink(jogador.Nome+" - "+jogador.Apelido, "DetalhesJogador", new { jogador.Id })</td>
+                    <td>@Html.ActionLink("Editar", "Editar", new { jogador.Id })</td>
+                    <td>@Html.ActionLink("Deletar", "Deletar", new { jogador.Id })</td>
+                </tr>
             }
         </tbody>
     </table>
 }
 else
 {
-    <p>We don't have any customers yet.</p>
+    <p>Nenhum jogador cadastrado.</p>
 }

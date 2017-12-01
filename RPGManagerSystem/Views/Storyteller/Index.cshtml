@@ -1,0 +1,35 @@
+﻿@model RPGManagerSystem.ViewModels.StorytellerIndexViewModel
+@{
+    ViewBag.Title = "Narradores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Novo Narrador", "Novo", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (@Model.Narradores.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Lista</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var narrador in Model.Narradores)
+            {
+                <tr>
+                    <td>@Html.ActionLink(narrador.Nome+" - "+narrador.Apelido, "DetalhesNarrador", new { narrador.Id })</td>
+                    <td>@Html.ActionLink("Editar", "Editar", new { narrador.Id })</td>
+                    <td>@Html.ActionLink("Deletar", "Deletar", new { narrador.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum narrador cadastrado.</p>
+}

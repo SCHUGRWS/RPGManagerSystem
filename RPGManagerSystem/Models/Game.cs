@@ -17,5 +17,12 @@ namespace RPGManagerSystem.Models
         
         public virtual List<Sheet> Fichas { get; set; }
 
+        [Required]
+        public long StorytellerId { get; set; }
+        public Storyteller Storyteller { get; set; }
+
+        [Required]
+        [StringLength(9999)]
+        public string Historia { get; set; }
     }
 }

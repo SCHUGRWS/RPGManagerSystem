@@ -1,10 +1,9 @@
 ﻿@model RPGManagerSystem.ViewModels.PlayerFormViewModel
 @{
-    ViewBag.Title = "FormJogador";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@Model.Title</h2>
 
 @using (Html.BeginForm("Salvar", "Player"))
 {

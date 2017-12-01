@@ -1,0 +1,35 @@
+﻿@model RPGManagerSystem.ViewModels.SheetIndexViewModel
+@{
+    ViewBag.Title = "Fichas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Nova Ficha", "Novo", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (@Model.Fichas.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Fichas</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var ficha in Model.Fichas)
+            {
+                <tr>
+                    <td>@Html.ActionLink(ficha.Nome+" - "+ficha.Classe, "DetalhesFicha", new { ficha.Id })</td>
+                    <td>@Html.ActionLink("Editar", "Editar", new { ficha.Id })</td>
+                    <td>@Html.ActionLink("Deletar", "Deletar", new { ficha.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhuma ficha cadastrada.</p>
+}

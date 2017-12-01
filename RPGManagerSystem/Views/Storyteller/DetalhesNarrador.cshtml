@@ -1,0 +1,24 @@
+﻿@model RPGManagerSystem.Models.Storyteller
+@{
+    ViewBag.Title = "Narrador - Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Nome: @Model.Nome</h3>
+@if (@Model.Jogos.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Jogo</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var jogo in Model.Jogos)
+            {
+                <tr><td>@jogo.Id</td></tr>
+            }
+        </tbody>
+    </table>
+}

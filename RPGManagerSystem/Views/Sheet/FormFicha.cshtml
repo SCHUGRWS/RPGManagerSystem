@@ -1,0 +1,36 @@
+﻿@model RPGManagerSystem.ViewModels.SheetFormViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Salvar", "Sheet"))
+{
+    @Html.AntiForgeryToken();
+    @Html.HiddenFor(m => m.Ficha.Id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ficha.Nome)
+        @Html.TextBoxFor(m => m.Ficha.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ficha.Nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ficha.Classe)
+        @Html.TextBoxFor(m => m.Ficha.Classe, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ficha.Classe)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ficha.PlayerId)
+        @Html.DropDownListFor(m => m.Ficha.PlayerId, new SelectList(Model.Jogadores, "Id", "Nome"), "Selecione o jogador", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ficha.PlayerId)
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
