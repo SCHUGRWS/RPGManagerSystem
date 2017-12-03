@@ -1,0 +1,30 @@
+﻿@model RPGManagerSystem.ViewModels.SheetClassFormViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Salvar", "SheetClass"))
+{
+    @Html.AntiForgeryToken();
+    @Html.HiddenFor(m => m.Classe.Id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Classe.Nome)
+        @Html.TextBoxFor(m => m.Classe.Nome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Classe.Nome)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Classe.Habilidades)
+        @Html.TextAreaFor(m => m.Classe.Habilidades, new { rows = "5", cols = "50" })
+        @Html.ValidationMessageFor(m => m.Classe.Habilidades)
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+    }
+

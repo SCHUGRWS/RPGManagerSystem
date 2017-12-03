@@ -6,17 +6,17 @@ using System.Web;
 
 namespace RPGManagerSystem.ViewModels
 {
-    public class StorytellerFormViewModel
+    public class SheetClassFormViewModel
     {
-        public Storyteller Narrador { get; set; }
+        public SheetClass Classe { get; set; }
         public string Title
         {
             get
             {
-                if (Narrador != null && Narrador.Id != 0)
-                    return "Editar Narrador";
+                if (Classe != null && Classe.Id != 0)
+                    return "Editar Classe";
 
-                return "Novo Narrador";
+                return "Nova Classe";
             }
         }
     }

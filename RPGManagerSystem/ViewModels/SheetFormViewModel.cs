@@ -9,6 +9,7 @@ namespace RPGManagerSystem.ViewModels
     public class SheetFormViewModel
     {
         public IEnumerable<Player> Jogadores { get; set; }
+        public IEnumerable<SheetClass> Classes { get; set; }
         public Sheet Ficha { get; set; }
         public string Title
         {

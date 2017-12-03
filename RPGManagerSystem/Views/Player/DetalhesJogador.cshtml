@@ -17,7 +17,7 @@
 
             @foreach (var ficha in Model.Fichas)
             {
-                <tr><td><a href="@Url.Action("DetalhesFicha", "Sheet", new { ficha.Id })">@ficha.Nome - @ficha.Classe</a></td></tr>
+                <tr><td><a href="@Url.Action("DetalhesFicha", "Sheet", new { ficha.Id })">@ficha.Nome</a></td></tr>
             }
         </tbody>
     </table>

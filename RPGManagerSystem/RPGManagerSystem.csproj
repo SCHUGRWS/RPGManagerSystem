@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\SheetClassController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -251,12 +252,34 @@
     <Compile Include="Migrations\201711302104451_AtualizandoTabelas.Designer.cs">
       <DependentUpon>201711302104451_AtualizandoTabelas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712031330368_NovosDadosJogo.cs" />
+    <Compile Include="Migrations\201712031330368_NovosDadosJogo.Designer.cs">
+      <DependentUpon>201712031330368_NovosDadosJogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031347239_NovosDadosJogo2.cs" />
+    <Compile Include="Migrations\201712031347239_NovosDadosJogo2.Designer.cs">
+      <DependentUpon>201712031347239_NovosDadosJogo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031505356_RemovendoJogoAdicionandoClasse.cs" />
+    <Compile Include="Migrations\201712031505356_RemovendoJogoAdicionandoClasse.Designer.cs">
+      <DependentUpon>201712031505356_RemovendoJogoAdicionandoClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031512288_RemovendoJogoAdicionandoClasse2.cs" />
+    <Compile Include="Migrations\201712031512288_RemovendoJogoAdicionandoClasse2.Designer.cs">
+      <DependentUpon>201712031512288_RemovendoJogoAdicionandoClasse2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031527283_RemovendoJogoAdicionandoClasse23.cs" />
+    <Compile Include="Migrations\201712031527283_RemovendoJogoAdicionandoClasse23.Designer.cs">
+      <DependentUpon>201712031527283_RemovendoJogoAdicionandoClasse23.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\SheetClass.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Sheet.cs" />
     <Compile Include="Models\Storyteller.cs" />
+    <Compile Include="ViewModels\SheetClassFormViewModel.cs" />
+    <Compile Include="ViewModels\SheetClassIndexViewModel.cs" />
     <Compile Include="ViewModels\PlayerFormViewModel.cs" />
     <Compile Include="ViewModels\PlayerIndexViewModel.cs" />
     <Compile Include="Models\Player.cs" />
@@ -333,6 +356,9 @@
     <Content Include="Views\Sheet\Index.cshtml" />
     <Content Include="Views\Sheet\DetalhesFicha.cshtml" />
     <Content Include="Views\Sheet\FormFicha.cshtml" />
+    <Content Include="Views\SheetClass\Index.cshtml" />
+    <Content Include="Views\SheetClass\DetalhesClasse.cshtml" />
+    <Content Include="Views\SheetClass\FormClasse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -399,6 +425,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711302104451_AtualizandoTabelas.resx">
       <DependentUpon>201711302104451_AtualizandoTabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031330368_NovosDadosJogo.resx">
+      <DependentUpon>201712031330368_NovosDadosJogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031347239_NovosDadosJogo2.resx">
+      <DependentUpon>201712031347239_NovosDadosJogo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031505356_RemovendoJogoAdicionandoClasse.resx">
+      <DependentUpon>201712031505356_RemovendoJogoAdicionandoClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031512288_RemovendoJogoAdicionandoClasse2.resx">
+      <DependentUpon>201712031512288_RemovendoJogoAdicionandoClasse2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031527283_RemovendoJogoAdicionandoClasse23.resx">
+      <DependentUpon>201712031527283_RemovendoJogoAdicionandoClasse23.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

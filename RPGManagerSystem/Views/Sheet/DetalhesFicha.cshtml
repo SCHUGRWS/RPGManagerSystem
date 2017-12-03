@@ -7,7 +7,10 @@
 <h2>@ViewBag.Title</h2>
 
 <h3>Nome: @Model.Nome</h3>
-<h3>Classe: @Model.Classe</h3>
+@if (@Model.SheetClass != null)
+{
+    <h3>Classe: <a href="@Url.Action("DetalhesClasse", "SheetClass", new { @Model.SheetClass.Id })">@Model.SheetClass.Nome </a></h3>
+}
 @if (@Model.Player != null)
 {
     <h3>Jogador: <a href="@Url.Action("DetalhesJogador", "Player", new { @Model.Player.Id })">@Model.Player.Nome - @Model.Player.Apelido</a></h3>

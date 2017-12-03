@@ -24,7 +24,7 @@ namespace RPGManagerSystem.Controllers
         {
             var sheetIndexView = new SheetIndexViewModel()
             {
-                Fichas = _dbContext.Sheet.ToList()
+                Fichas = _dbContext.Sheet.Include(c => c.SheetClass).ToList()
             };
 
             return View(sheetIndexView);
@@ -32,7 +32,7 @@ namespace RPGManagerSystem.Controllers
 
         public ActionResult DetalhesFicha(int id)
         {
-            Sheet ficha = _dbContext.Sheet.Include(p => p.Player).Where(x => x.Id == id).FirstOrDefault();
+            Sheet ficha = _dbContext.Sheet.Include(p => p.Player).Include(s => s.SheetClass).Where(x => x.Id == id).FirstOrDefault();
             if (ficha==null) return HttpNotFound();
 
             return View(ficha);
@@ -43,7 +43,8 @@ namespace RPGManagerSystem.Controllers
         {
             var viewModel = new SheetFormViewModel() {
                 Ficha = new Sheet(),
-                Jogadores = _dbContext.Player.ToList()
+                Jogadores = _dbContext.Player.ToList(),
+                Classes = _dbContext.SheetClass.ToList()
             };
 
             return View("FormFicha", viewModel);
@@ -59,7 +60,8 @@ namespace RPGManagerSystem.Controllers
                 var viewModel = new SheetFormViewModel
                 {
                     Ficha = ficha,
-                    Jogadores = _dbContext.Player.ToList()
+                    Jogadores = _dbContext.Player.ToList(),
+                    Classes = _dbContext.SheetClass.ToList()
                 };
 
                 return View("FormFicha", viewModel);
@@ -105,7 +107,8 @@ namespace RPGManagerSystem.Controllers
             var viewModel = new SheetFormViewModel
             {
                 Ficha = ficha,
-                Jogadores = _dbContext.Player.ToList()
+                Jogadores = _dbContext.Player.ToList(),
+                Classes = _dbContext.SheetClass.ToList()
             };
 
             return View("FormFicha", viewModel);

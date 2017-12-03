@@ -21,7 +21,7 @@
             @foreach (var ficha in Model.Fichas)
             {
                 <tr>
-                    <td>@Html.ActionLink(ficha.Nome+" - "+ficha.Classe, "DetalhesFicha", new { ficha.Id })</td>
+                    <td>@Html.ActionLink(ficha.Nome+" - "+ficha.SheetClass.Nome, "DetalhesFicha", new { ficha.Id })</td>
                     <td>@Html.ActionLink("Editar", "Editar", new { ficha.Id })</td>
                     <td>@Html.ActionLink("Deletar", "Deletar", new { ficha.Id })</td>
                 </tr>

@@ -15,9 +15,9 @@
         @Html.ValidationMessageFor(m => m.Ficha.Nome)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Ficha.Classe)
-        @Html.TextBoxFor(m => m.Ficha.Classe, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Ficha.Classe)
+        @Html.LabelFor(m => m.Ficha.SheetClassId)
+        @Html.DropDownListFor(m => m.Ficha.SheetClassId, new SelectList(Model.Classes, "Id", "Nome"), "Selecione o jogador", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ficha.SheetClassId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Ficha.PlayerId)

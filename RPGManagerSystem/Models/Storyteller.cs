@@ -14,8 +14,6 @@ namespace RPGManagerSystem.Models
         [StringLength(255)]
         public string Nome { get; set; }
 
-        public virtual List<Game> Jogos { get; set; }
-
         [StringLength(255)]
         public string Apelido { get; set; }
 

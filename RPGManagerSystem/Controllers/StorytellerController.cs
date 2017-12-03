@@ -43,8 +43,7 @@ namespace RPGManagerSystem.Controllers
         public ActionResult Novo()
         {
             var viewModel = new StorytellerFormViewModel(){
-                Narrador = new Storyteller(),
-                Jogos = _dbContext.Game.ToList()
+                Narrador = new Storyteller()
             };
 
             return View("FormNarrador", viewModel);
@@ -59,8 +58,7 @@ namespace RPGManagerSystem.Controllers
             {
                 var viewModel = new StorytellerFormViewModel
                 {
-                    Narrador = narrador,
-                    Jogos = _dbContext.Game.ToList()
+                    Narrador = narrador
                 };
 
                 return View("FormNarrador", viewModel);
@@ -105,8 +103,7 @@ namespace RPGManagerSystem.Controllers
 
             var viewModel = new StorytellerFormViewModel
             {
-                Narrador = narrador,
-                Jogos = _dbContext.Game.ToList()
+                Narrador = narrador
             };
 
             return View("FormNarrador", viewModel);
