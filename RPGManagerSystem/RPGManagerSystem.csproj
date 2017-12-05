@@ -274,6 +274,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\SheetClass.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Sheet.cs" />
@@ -359,6 +360,10 @@
     <Content Include="Views\SheetClass\Index.cshtml" />
     <Content Include="Views\SheetClass\DetalhesClasse.cshtml" />
     <Content Include="Views\SheetClass\FormClasse.cshtml" />
+    <Content Include="Views\Player\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Sheet\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\SheetClass\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Storyteller\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

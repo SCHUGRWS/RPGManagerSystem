@@ -27,7 +27,10 @@ namespace RPGManagerSystem.Controllers
                 Narradores = _dbContext.Storyteller.ToList()
             };
 
-            return View(storytellerIndexView);
+            if (User.IsInRole(RoleName.Administrador))
+                return View(storytellerIndexView);
+
+            return View("ReadOnlyIndex", storytellerIndexView);
         }
 
         public ActionResult DetalhesNarrador(int id)
@@ -39,7 +42,7 @@ namespace RPGManagerSystem.Controllers
             return View(narrador);
         }
 
-
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Novo()
         {
             var viewModel = new StorytellerFormViewModel(){
@@ -51,6 +54,7 @@ namespace RPGManagerSystem.Controllers
 
         [HttpPost] // só será acessada com POST
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Salvar(Storyteller narrador)
         {
             ModelState.Remove("narrador.Id");
@@ -76,6 +80,7 @@ namespace RPGManagerSystem.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Deletar(int id)
         {
             Storyteller narrador = _dbContext.Storyteller.SingleOrDefault(c => c.Id == id);
@@ -94,6 +99,7 @@ namespace RPGManagerSystem.Controllers
 
         }
 
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Editar(int id)
         {
             var narrador = _dbContext.Storyteller.SingleOrDefault(c => c.Id == id);

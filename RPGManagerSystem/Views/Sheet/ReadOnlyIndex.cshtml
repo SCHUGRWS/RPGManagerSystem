@@ -1,0 +1,31 @@
+﻿@model RPGManagerSystem.ViewModels.SheetIndexViewModel
+@{
+    ViewBag.Title = "Fichas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+</br>
+
+@if (@Model.Fichas.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Fichas</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var ficha in Model.Fichas)
+            {
+                <tr>
+                    <td>@Html.ActionLink(ficha.Nome + " - " + ficha.SheetClass.Nome, "DetalhesFicha", new { ficha.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhuma ficha cadastrada.</p>
+}

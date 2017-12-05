@@ -27,8 +27,12 @@ namespace RPGManagerSystem.Controllers
                 Classes = _dbContext.SheetClass.ToList()
             };
 
-            return View(classIndexView);
+            if (User.IsInRole(RoleName.Administrador))
+                return View(classIndexView);
+
+            return View("ReadOnlyIndex", classIndexView);
         }
+        
 
         public ActionResult DetalhesClasse(int id)
         {
@@ -39,7 +43,7 @@ namespace RPGManagerSystem.Controllers
             return View(classe);
         }
 
-
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Novo()
         {
             var viewModel = new SheetClassFormViewModel()
@@ -52,6 +56,7 @@ namespace RPGManagerSystem.Controllers
 
         [HttpPost] // só será acessada com POST
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Salvar(Models.SheetClass classe)
         {
             ModelState.Remove("classe.Id");
@@ -77,6 +82,7 @@ namespace RPGManagerSystem.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Deletar(int id)
         {
             Models.SheetClass classe = _dbContext.SheetClass.SingleOrDefault(c => c.Id == id);
@@ -95,6 +101,7 @@ namespace RPGManagerSystem.Controllers
 
         }
 
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Editar(int id)
         {
             var classe = _dbContext.SheetClass.SingleOrDefault(c => c.Id == id);

@@ -1,0 +1,31 @@
+﻿@model RPGManagerSystem.ViewModels.SheetClassIndexViewModel
+@{
+    ViewBag.Title = "Classes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+</br>
+
+@if (@Model.Classes.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr><th>Lista</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var classe in Model.Classes)
+            {
+                <tr>
+                    <td>@Html.ActionLink(classe.Nome, "DetalhesClasse", new { classe.Id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhuma classe cadastrado.</p>
+}

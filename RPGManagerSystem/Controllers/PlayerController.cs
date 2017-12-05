@@ -26,8 +26,11 @@ namespace RPGManagerSystem.Controllers
             {
                 Jogadores = _dbContext.Player.ToList()
             };
-            
-            return View(playerIndexView);
+
+            if (User.IsInRole(RoleName.Administrador))
+                return View(playerIndexView);
+
+            return View("ReadOnlyIndex", playerIndexView);
         }
 
         public ActionResult DetalhesJogador(int id)
@@ -39,7 +42,7 @@ namespace RPGManagerSystem.Controllers
             return View(jogador);
         }
 
-
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Novo()
         {
             var viewModel = new PlayerFormViewModel()
@@ -53,6 +56,7 @@ namespace RPGManagerSystem.Controllers
 
         [HttpPost] // só será acessada com POST
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Salvar(Player jogador)
         {
             ModelState.Remove("jogador.Id");
@@ -79,6 +83,7 @@ namespace RPGManagerSystem.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Deletar(int id)
         {
             Player jogador = _dbContext.Player.SingleOrDefault(c => c.Id == id);
@@ -97,6 +102,7 @@ namespace RPGManagerSystem.Controllers
             
         }
 
+        [Authorize(Roles = RoleName.Administrador)]
         public ActionResult Editar(int id)
         {
             var jogador = _dbContext.Player.SingleOrDefault(c => c.Id == id);
